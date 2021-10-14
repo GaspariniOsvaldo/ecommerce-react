@@ -1,9 +1,12 @@
-import './NavBar.css';
+import 'boxicons';
+import '../CartWidget/CartWidget';
+import { CartWidget } from '../CartWidget/CartWidget';
 
 export const NavBar = () => {
     return (
         <header>
-            <h1>Tienda Ecommerce</h1>
+
+            <h1>audiophile</h1>
 
             <ul>
                 <li><a href="#">Home</a></li>
@@ -11,6 +14,8 @@ export const NavBar = () => {
                 <li><a href="#">Speakers</a></li>
                 <li><a href="#">Earphones</a></li>
             </ul>
+
+            <CartWidget/>
 
         </header>
     )

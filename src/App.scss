@@ -1,0 +1,51 @@
+@import "./scss/utilities/variables";
+@import "./scss/base/reset";
+
+.App {
+  background: rgb(49, 49, 49);
+  background: radial-gradient(circle, rgba(49, 49, 49, 1) 13%, rgba(0, 0, 0, 1) 76%);
+
+  header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+
+    h1 {
+      color: $color-white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      flex-flow: row nowrap;
+
+      li {
+        margin: 0 20px;
+
+        a {
+          color: $color-white;
+          font-family: 'Montserrat', serif;
+          font-weight: 700;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .ItemListContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+
+    p {
+      color: $color-white;
+      font-size: 2rem;
+      font-family: 'Montserrat', serif;
+      font-weight: 700;
+    }
+  }
+}

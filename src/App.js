@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './components/header/NavBar';
-import './App.css';
-import {NavBar} from './components/header/NavBar'
+import 'boxicons';
+import './App.scss';
+import {NavBar} from './components/NavBar/NavBar'
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import 'boxicons';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
+      <ItemListContainer className="ItemListContainer" greeting="Hola! :D -- Soy un contenedor de productos!" />
     </div>
   );
 }
