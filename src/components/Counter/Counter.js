@@ -1,17 +1,22 @@
 import React, {Component, useState } from 'react';
 
 export const Counter = () => {
-    const [counter, setCounter] = useState('1');
+    const [counter, setCounter] = useState(1);
+    let stock = 12;
 
     return (
-        <article className="counter">
+        <div className="counterClass">
             <button onClick={ 
                 () => {
                     if (counter > 0) {
                         setCounter(counter - 1)
                     }}} >-</button>
-            <input readOnly>counter</input>
-            <button onClick={() => setCounter(counter + 1)}>+</button>
-        </article>
+            <p>{counter}</p>
+            <button onClick={() => {
+                if (counter < stock) {
+                    setCounter(counter + 1)
+                }
+            }}>+</button>
+        </div>
     )
 }
