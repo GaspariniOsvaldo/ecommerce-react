@@ -14,7 +14,7 @@
 
     h1 {
       color: $color-white;
-      font-family: 'Montserrat', sans-serif;
+      @extend %font-main;
       font-weight: 700;
     }
 
@@ -40,12 +40,53 @@
     justify-content: center;
     align-items: center;
     padding: 2rem;
+    background-color: white;
 
-    p {
-      color: $color-white;
-      font-size: 2rem;
-      font-family: 'Montserrat', serif;
-      font-weight: 700;
+    .ItemList {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+
+
+      .Item {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 30%;
+
+        img {
+          width: 15vw;
+          height: 20vh;
+          object-fit: contain;
+          padding: 0 0 .8rem;
+        }
+
+        section {
+          background-color: darken($color: #FFF, $amount: 3);
+          padding: 1rem;
+          width: 100%;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+
+          h3 {
+            @extend %font-main;
+            padding: 0 0 .7rem;
+          }
+  
+          a {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
     }
   }
 
