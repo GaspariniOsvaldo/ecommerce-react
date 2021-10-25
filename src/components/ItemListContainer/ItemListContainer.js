@@ -1,6 +1,6 @@
 import { ItemList } from "../ItemList/ItemList";
 import images from '../../media/images';
-import { useEffect } from "react";
+import { useState } from "react";
 
 export const ItemListContainer = () => {
     const Productos = [
@@ -8,7 +8,8 @@ export const ItemListContainer = () => {
         {id: 2, title: "SoundOP", price: 4500, pictureUrl: images.img2},
         {id: 3, title: "Ultra Sound", price: 6700, pictureUrl: images.img3}
     ]
-    let items;
+
+    const [products, setProducts] = useState(null);
 
     const getDatos = () => {
         return new Promise((resolve, reject) => {
@@ -19,12 +20,12 @@ export const ItemListContainer = () => {
     }
 
     getDatos().then((catalogo) => {
-        items = catalogo;
+        setProducts(catalogo);
     })
 
     return(
         <section className="ItemListContainer">
-            <ItemList productos={items} ></ItemList>
+            <ItemList productos={products}></ItemList>
         </section>
     );
 }

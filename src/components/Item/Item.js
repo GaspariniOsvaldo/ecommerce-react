@@ -3,7 +3,7 @@
 export const Item = ({title, price, pictureUrl}) => {
     return (
         <article className="Item">
-            <img src={pictureUrl} alt="Auriculares"/>
+            <img className="imgItem" src={pictureUrl} alt="Auriculares"/>
             <section>
                 <h3>{title}</h3>
                 <h3>${price}</h3>
