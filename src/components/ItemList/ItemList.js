@@ -5,8 +5,8 @@ export const ItemList = ({productos}) => {
 
     return (
         <section className="ItemList">
-            {productos ? productos.map((productitos) => (
-                <Item key={productitos.id} title={productitos.title} price={productitos.price} pictureUrl={productitos.pictureUrl}/>
+            {productos ? productos.map((producto) => (
+                <Item key={producto.id} title={producto.title} price={producto.price} pictureUrl={producto.pictureUrl}/>
             )) : (<h1>Loading...</h1>)}
         </section>
     )}

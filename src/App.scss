@@ -112,4 +112,40 @@
       padding: 0 .5rem;
     }
   }
+
+  /* --- */
+  .h2Detail{
+    display: flex;
+    justify-content: center;
+    background-color: $color-white;
+    padding: 0 0 2vh;
+  }
+
+  .ItemDetailContainer {
+    width: 80%;
+    display: flex;
+    background-color: $color-white;
+    margin: 0 auto;
+    padding: 0 0 5vh;
+    justify-content: center;
+    align-items: center;
+
+    .ItemDetail {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 15vw;
+      }
+    }
+  }
 }
