@@ -1,5 +1,5 @@
 import 'boxicons';
-import { Link} from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 import '../CartWidget/CartWidget';
 import { CartWidget } from '../CartWidget/CartWidget';
 
@@ -10,9 +10,9 @@ export const NavBar = () => {
             <h1><Link to="/">audiophile</Link></h1>
 
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/category/Headphones">Headphones</Link></li>
-                <li><Link to="/category/In-ear">Earphones</Link></li>
+                <li><NavLink activeClassName="ActiveNavLink" exact to="/">Home</NavLink></li>
+                <li><NavLink activeClassName="ActiveNavLink" to="/category/Headphones">Headphones</NavLink></li>
+                <li><NavLink activeClassName="ActiveNavLink" to="/category/In-ear">Earphones</NavLink></li>
             </ul>
 
             <CartWidget/>

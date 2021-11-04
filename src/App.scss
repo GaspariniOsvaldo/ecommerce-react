@@ -11,6 +11,10 @@
     padding: 2rem 0;
     background: radial-gradient(circle, rgba(49, 49, 49, 1) 13%, rgba(0, 0, 0, 1) 76%);
 
+    .ActiveNavLink {
+      border-bottom: 1px solid white;
+    }
+
     h1 {
       color: $color-white;
       @extend %font-main;
