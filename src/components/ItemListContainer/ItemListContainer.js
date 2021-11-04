@@ -19,7 +19,7 @@ export const ItemListContainer = () => {
             })
             .then(catalogo => {
                 if(categoryId){
-                    let categorySelect = Productos.filter((x) => x.cat === categoryId)
+                    const categorySelect = Productos.filter((x) => x.cat === categoryId)
                     setProducts(categorySelect);
                     console.log("Entro el params: " + categorySelect)
                 }
@@ -28,13 +28,14 @@ export const ItemListContainer = () => {
                     console.log("entro sin param")
                 }
             })
-        })
+        }, categoryId)
     }
 
     GetDatos()
 
     return(
         <section className="ItemListContainer">
+            <h2 className="ItemListContainer__title">Productos</h2>
             <ItemList productos={products}></ItemList>
         </section>
     );

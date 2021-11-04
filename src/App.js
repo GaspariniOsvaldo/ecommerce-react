@@ -5,7 +5,6 @@ import {NavBar} from './components/NavBar/NavBar';
 import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Categories } from './components/Categories/Categories';
-import { ItemList } from './components/ItemList/ItemList';
 
 function App() {
   
@@ -23,7 +22,6 @@ function App() {
           </Route>
 
           <Route path="/category/:categoryId">
-            <Categories></Categories>
             <ItemListContainer></ItemListContainer>
           </Route>
 

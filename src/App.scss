@@ -36,10 +36,15 @@
 
   .ItemListContainer {
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
+    padding: 5vh 0 0;
     background-color: white;
+
+    .ItemListContainer__title {
+      border-bottom: 1px solid black;
+    }
 
     .ItemList {
       display: flex;
@@ -145,25 +150,36 @@
     }
   }
 
-  .Categories {
+  .CategoriesContainer{
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
 
-    article {
+    .CategoriesContainer__title {
+      border-bottom: 1px solid black;
+    }
+
+    .Categories {
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: row nowrap;
       justify-content: center;
       align-items: center;
-      
-      img {
-        width: 10vw;
-      }
-      .btnVisitar {
+      margin: 0 auto;
+  
+      article {
         display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
         align-items: center;
+        
+        img {
+          width: 10vw;
+        }
+        .btnVisitar {
+          display: flex;
+          align-items: center;
+        }
       }
     }
   }
