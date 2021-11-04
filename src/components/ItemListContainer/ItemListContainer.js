@@ -1,27 +1,37 @@
 import { ItemList } from "../ItemList/ItemList";
-import images from '../../media/images';
 import { useState } from "react";
+import { Productos } from "../../media/productos";
+import { useParams } from "react-router";
+import { useEffect } from "react";
 
 export const ItemListContainer = () => {
-    const Productos = [
-        {id: 1, title: "XMax", price: 2000, pictureUrl: images.img1},
-        {id: 2, title: "SoundOP", price: 4500, pictureUrl: images.img2},
-        {id: 3, title: "Ultra Sound", price: 6700, pictureUrl: images.img3}
-    ]
+
+    const {categoryId} = useParams()
 
     const [products, setProducts] = useState(null);
 
-    const getDatos = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout (() => {
-                resolve(Productos);
-            }, 2000);
-        });
+    const GetDatos = () => {
+        useEffect(() => {
+            return new Promise((resolve, reject) => {
+                setTimeout (() => {
+                    resolve(Productos);
+                }, 500);
+            })
+            .then(catalogo => {
+                if(categoryId){
+                    let categorySelect = Productos.filter((x) => x.cat === categoryId)
+                    setProducts(categorySelect);
+                    console.log("Entro el params: " + categorySelect)
+                }
+                else {
+                    setProducts(catalogo);
+                    console.log("entro sin param")
+                }
+            })
+        })
     }
 
-    getDatos().then((catalogo) => {
-        setProducts(catalogo);
-    })
+    GetDatos()
 
     return(
         <section className="ItemListContainer">

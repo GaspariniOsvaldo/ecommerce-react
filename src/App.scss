@@ -2,7 +2,6 @@
 @import "./scss/base/reset";
 
 .App {
-  background: radial-gradient(circle, rgba(49, 49, 49, 1) 13%, rgba(0, 0, 0, 1) 76%);
 
   header {
     display: flex;
@@ -10,6 +9,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 2rem 0;
+    background: radial-gradient(circle, rgba(49, 49, 49, 1) 13%, rgba(0, 0, 0, 1) 76%);
 
     h1 {
       color: $color-white;
@@ -113,17 +113,10 @@
     }
   }
 
-  /* --- */
-  .h2Detail{
-    display: flex;
-    justify-content: center;
-    background-color: $color-white;
-    padding: 0 0 2vh;
-  }
-
   .ItemDetailContainer {
     width: 80%;
     display: flex;
+    flex-flow: row nowrap;
     background-color: $color-white;
     margin: 0 auto;
     padding: 0 0 5vh;
@@ -137,14 +130,40 @@
       align-items: center;
 
       div {
+        height: 100%;
+        width: 50%;
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
+        background-color: #EEEEEE;
       }
 
       img {
         width: 15vw;
+      }
+    }
+  }
+
+  .Categories {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    article {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      
+      img {
+        width: 10vw;
+      }
+      .btnVisitar {
+        display: flex;
+        align-items: center;
       }
     }
   }
