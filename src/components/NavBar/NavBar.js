@@ -11,9 +11,8 @@ export const NavBar = () => {
 
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/">Headphones</Link></li>
-                <li><Link to="/">Speakers</Link></li>
-                <li><Link to="/">Earphones</Link></li>
+                <li><Link to="/category/Headphones">Headphones</Link></li>
+                <li><Link to="/category/In-ear">Earphones</Link></li>
             </ul>
 
             <CartWidget/>
