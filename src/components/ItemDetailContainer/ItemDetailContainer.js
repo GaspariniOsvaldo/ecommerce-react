@@ -11,23 +11,19 @@ export const ItemDetailContainer = () => {
     let {itemId} = useParams();
 
     itemId = Number.parseInt(itemId)
-
-    const GetItem = () => {
-        useEffect(() => {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    let info = Productos.find((x) => x.id === itemId)
-                    resolve(info)
-                }, 100)
-            })
-            .then(itemRecibido => {
-                setItemDetail(itemRecibido);
-                console.log(itemRecibido)
-            })
+    
+    useEffect(() => {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let info = Productos.find((x) => x.id === itemId)
+                resolve(info)
+            }, 100)
         })
-    }
-
-    GetItem();
+        .then(itemRecibido => {
+            setItemDetail(itemRecibido);
+            console.log(itemRecibido)
+        })
+    }, [itemId])
 
     return (
         <>

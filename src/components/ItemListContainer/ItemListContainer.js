@@ -10,28 +10,24 @@ export const ItemListContainer = () => {
 
     const [products, setProducts] = useState(null);
 
-    const GetDatos = () => {
-        useEffect(() => {
-            return new Promise((resolve, reject) => {
-                setTimeout (() => {
-                    resolve(Productos);
-                }, 500);
-            })
-            .then(catalogo => {
-                if(categoryId){
-                    const categorySelect = Productos.filter((x) => x.cat === categoryId)
-                    setProducts(categorySelect);
-                    console.log("Entro el params: " + categorySelect)
-                }
-                else {
-                    setProducts(catalogo);
-                    console.log("entro sin param")
-                }
-            })
-        }, categoryId)
-    }
-
-    GetDatos()
+    useEffect(() => {
+        return new Promise((resolve, reject) => {
+            setTimeout (() => {
+                resolve(Productos);
+            }, 500);
+        })
+        .then(catalogo => {
+            if(categoryId){
+                const categorySelect = Productos.filter((x) => x.cat === categoryId)
+                setProducts(categorySelect);
+                console.log("Entro el params: " + categorySelect)
+            }
+            else {
+                setProducts(catalogo);
+                console.log("entro sin param")
+            }
+        })
+    }, [categoryId])
 
     return(
         <section className="ItemListContainer">
