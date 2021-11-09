@@ -21,7 +21,6 @@ export const ItemDetailContainer = () => {
         })
         .then(itemRecibido => {
             setItemDetail(itemRecibido);
-            console.log(itemRecibido)
         })
     }, [itemId])
 
