@@ -19,7 +19,7 @@ export const Productos = [
     },
     {
         id: 3, 
-        title: "Ultra Sound", 
+        title: "AirPods", 
         price: 6700, 
         pictureUrl: images.apple1, 
         desc: "In-ear inalambricos con cancelacion de ruido activa, resistentes al agua, con funda cargadora",

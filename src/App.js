@@ -1,18 +1,25 @@
 import 'boxicons';
 import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import {NavBar} from './components/NavBar/NavBar';
-import {ItemListContainer} from './components/ItemListContainer/ItemListContainer';
+import { NavBar } from './components/NavBar/NavBar';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Categories } from './components/Categories/Categories';
+import { useEffect, useState } from 'react';
+import { createContext } from 'react';
 
-function App() {
-  
 
-  return (
+/* YA LO CORRIJO, ROMPI TODO */
+
+
+
+
+return (
+  <CartContext.Provider value={Cart}>
+
     <div className="App">
       <BrowserRouter>
-        <NavBar/>
+        <NavBar />
 
         <Switch>
 
@@ -31,10 +38,11 @@ function App() {
           </Route>
 
         </Switch>
-        
+
       </BrowserRouter>
     </div>
-  );
-}
+
+  </CartContext.Provider>
+);
 
 export default App;
