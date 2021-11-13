@@ -5,44 +5,43 @@ import { NavBar } from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Categories } from './components/Categories/Categories';
-import { useEffect, useState } from 'react';
-import { createContext } from 'react';
+import { CartProvider } from './contexts/CartContext';
+import { Cart } from './components/Cart/Cart';
 
+export default function App() {
 
-/* YA LO CORRIJO, ROMPI TODO */
+  return (
 
+    <CartProvider>
+      <div className="App">
+        <BrowserRouter>
+          <NavBar />
 
+          <Switch>
 
+            <Route exact path="/">
+              <Categories></Categories>
+              <ItemListContainer></ItemListContainer>
+            </Route>
 
-return (
-  <CartContext.Provider value={Cart}>
+            <Route path="/category/:categoryId">
+              <Categories></Categories>
+              <ItemListContainer></ItemListContainer>
+            </Route>
 
-    <div className="App">
-      <BrowserRouter>
-        <NavBar />
+            <Route exact path="/item/:itemId">
+              <ItemDetailContainer></ItemDetailContainer>
+            </Route>
 
-        <Switch>
+            <Route exact path="/cart">
+              <Cart/>
+            </Route>
 
-          <Route exact path="/">
-            <Categories></Categories>
-            <ItemListContainer></ItemListContainer>
-          </Route>
+          </Switch>
 
-          <Route path="/category/:categoryId">
-            <Categories></Categories>
-            <ItemListContainer></ItemListContainer>
-          </Route>
+        </BrowserRouter>
+      </div>
+    </CartProvider>
 
-          <Route exact path="/item/:itemId">
-            <ItemDetailContainer></ItemDetailContainer>
-          </Route>
-
-        </Switch>
-
-      </BrowserRouter>
-    </div>
-
-  </CartContext.Provider>
-);
-
-export default App;
+  );
+}

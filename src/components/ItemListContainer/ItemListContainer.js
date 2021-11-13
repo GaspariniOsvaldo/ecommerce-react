@@ -20,11 +20,9 @@ export const ItemListContainer = () => {
             if(categoryId){
                 const categorySelect = Productos.filter((x) => x.cat === categoryId)
                 setProducts(categorySelect);
-                console.log("Entro el params: " + categorySelect)
             }
             else {
                 setProducts(catalogo);
-                console.log("entro sin param")
             }
         })
     }, [categoryId])

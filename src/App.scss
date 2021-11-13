@@ -239,4 +239,33 @@
       padding: 0 0.5rem;
     }
   }
+
+  .CartSection {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .CartListSection {
+      display: flex;
+
+      .CartListContainer {
+        width: 70%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 10px;
+  
+        .CartItem {
+          margin: 0 auto;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+  
+          img {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
 }

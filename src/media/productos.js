@@ -5,29 +5,30 @@ export const Productos = [
         id: 1, 
         title: "1000 XM2",
         price: 2000, 
-        pictureUrl: images.sony1, 
+        pictureUrl: images.sony1,
+        alt: "Producto",
         desc: "Over-ear inalambricos premium con cancelacion de ruido",
-        cat: "Headphones"
+        cat: "Headphones",
+        stock: 5
     },
     {
         id: 2, 
         title: "XB950B1", 
         price: 4500, 
-        pictureUrl: images.sony2, 
+        pictureUrl: images.sony2,
+        alt: "Producto",
         desc: "Over-ear inalambricos extra-bass",
-        cat: "Headphones"
+        cat: "Headphones",
+        stock: 4
     },
     {
         id: 3, 
         title: "AirPods", 
         price: 6700, 
-        pictureUrl: images.apple1, 
+        pictureUrl: images.apple1,
+        alt: "Producto",
         desc: "In-ear inalambricos con cancelacion de ruido activa, resistentes al agua, con funda cargadora",
-        cat: "In-ear"
+        cat: "In-ear",
+        stock: 7
     }
 ]
-
-
-export default {
-    Productos
-}

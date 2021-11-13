@@ -1,10 +1,16 @@
 
+import { useCart } from "../../contexts/CartContext"
 import { Counter } from "../Counter/Counter"
+
 
 export const ItemDetail = ({ item }) => {
 
-    const addToCart = () => {
-        
+    const { addItem } = useCart();
+
+    const onAdd = (quantityToAdd) => {
+        item.stock -= quantityToAdd;
+        item.quantity = quantityToAdd;
+        addItem(item);
     }
 
     return (
@@ -14,7 +20,7 @@ export const ItemDetail = ({ item }) => {
                 <h2>{item.title}</h2>
                 <h2>Price: ${item.price}</h2>
                 <p>{item.desc}</p>
-                <Counter />
+                <Counter onAdd={onAdd} stockQuantity={item.stock} />
             </div>
         </article>
     )

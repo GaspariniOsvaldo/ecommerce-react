@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../contexts/CartContext';
 
-export const Counter = () => {
+export const Counter = ({ onAdd, stockQuantity }) => {
     const [counter, setCounter] = useState(0);
-    let stock = 120;
 
     const agregarAlCarrito = () => {
-        if (counter) {
-            localStorage.setItem('cantProd', counter)
+        if (counter > 0) {
+            onAdd(counter);
+
             const container = document.getElementById('addToCartContainer')
             container.classList.add("opacityZero")
-            
-            setTimeout(() => {
-                container.classList.add("displayNone")
-                const linkCarrito = document.getElementById('linkToCarrito')
-                linkCarrito.classList.remove("ToCarritoBase")
-                linkCarrito.classList.add("ToCarritoAfter")
-            }, 1000);
+
+
+            container.classList.add("displayNone")
+            const linkCarrito = document.getElementById('linkToCarrito')
+            linkCarrito.classList.remove("ToCarritoBase")
+            linkCarrito.classList.add("ToCarritoAfter")
         }
     }
 
@@ -37,7 +37,7 @@ export const Counter = () => {
 
                     <button onClick={
                         () => {
-                            if (counter < stock) {
+                            if (counter <= stockQuantity) {
                                 setCounter(counter + 1)
                             }
                         }} >+
