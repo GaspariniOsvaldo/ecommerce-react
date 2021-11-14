@@ -40,9 +40,6 @@ export const CartProvider = ({ children }) => {
 
         if (indexItem >= 0) {
             const cartProv = cart.filter(x => x.id !== item.id);
-
-            console.log("El cart prov del removeitem da: " + cartProv)
-
             setCart(cartProv);
         }
     }
