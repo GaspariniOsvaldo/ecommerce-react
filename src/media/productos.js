@@ -9,7 +9,7 @@ export const Productos = [
         alt: "Producto",
         desc: "Over-ear inalambricos premium con cancelacion de ruido",
         cat: "Headphones",
-        stock: 5
+        stockBase: 4
     },
     {
         id: 2, 
@@ -19,7 +19,7 @@ export const Productos = [
         alt: "Producto",
         desc: "Over-ear inalambricos extra-bass",
         cat: "Headphones",
-        stock: 4
+        stockBase: 4
     },
     {
         id: 3, 
@@ -29,6 +29,6 @@ export const Productos = [
         alt: "Producto",
         desc: "In-ear inalambricos con cancelacion de ruido activa, resistentes al agua, con funda cargadora",
         cat: "In-ear",
-        stock: 7
+        stockBase: 7
     }
 ]

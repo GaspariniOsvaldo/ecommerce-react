@@ -6,18 +6,13 @@ const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
-export const CartProvider =  ({children}) => {
+export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
 
     const existsInCart = (item) => {
         const result = cart.findIndex(producto => producto.id === item.id)
-        
-        cart && cart.map((producto) => (
-            console.log("El cart tiene: " + producto.id + " y el item buscado es: " + item.id)
-        ))
 
-        console.log("El findIndex al buscarlo da: " + result);
         return (result);
     }
 
@@ -26,12 +21,17 @@ export const CartProvider =  ({children}) => {
         const indexItem = existsInCart(item);
 
         if (indexItem >= 0) {
-            return
+            const cartProv = cart;
+
+            cartProv[indexItem].quantity = item.quantity;
+            cartProv[indexItem].stock = item.stock;
+            setCart(cartProv);
+
         }
         else {
             setCart([...cart, item]);
         }
-        
+
     }
 
     const removeItem = (item) => {
@@ -41,14 +41,14 @@ export const CartProvider =  ({children}) => {
         if (indexItem >= 0) {
             const cartProv = cart.filter(x => x.id !== item.id);
 
-            console.log("El cart prov da: " + cartProv)
+            console.log("El cart prov del removeitem da: " + cartProv)
 
             setCart(cartProv);
         }
     }
 
     return (
-        <CartContext.Provider value={{cart, addItem, removeItem}}>
+        <CartContext.Provider value={{ cart, addItem, removeItem }}>
             {children}
         </CartContext.Provider>
     )

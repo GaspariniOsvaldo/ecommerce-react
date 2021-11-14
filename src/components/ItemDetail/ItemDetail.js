@@ -11,7 +11,7 @@ export const ItemDetail = ({ item }) => {
 
     const onAdd = (quantityToAdd) => {
         added();
-        item.stock -= quantityToAdd;
+        item.stock = (item.stockBase - quantityToAdd);
         item.quantity = quantityToAdd;
         addItem(item);
     }
@@ -29,7 +29,7 @@ export const ItemDetail = ({ item }) => {
                 <h2>{item.title}</h2>
                 <h2>Price: ${item.price}</h2>
                 <p>{item.desc}</p>
-                { addedBoolean ? (<Link to="/cart" id="linkToCarrito" className="ToCarritoBase" >Ir al carrito</Link>) :  (<Counter onAdd={onAdd} stockQuantity={item.stock} />)}
+                { addedBoolean ? (<Link to="/cart" id="linkToCarrito" className="ToCarritoBase" >Ir al carrito</Link>) :  (<Counter onAdd={onAdd} stockQuantity={item.stockBase} />)}
             </div>
         </article>
     )

@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useCart } from '../../contexts/CartContext';
 
 export const Counter = ({ onAdd, stockQuantity }) => {
     const [counter, setCounter] = useState(0);
@@ -11,28 +9,29 @@ export const Counter = ({ onAdd, stockQuantity }) => {
         }
     }
 
+    /* Funciones del counter */
+    const decrement = () => {
+        if (counter > 0) {
+            setCounter(counter - 1)
+        }
+    }
+
+    const increment = () => {
+        if (counter < stockQuantity) {
+            setCounter(counter + 1)
+        }
+    }
 
     return (
         <section className="CounterContainer">
             <section id='addToCartContainer'>
                 <div id='Counter'>
-                    <button onClick={
-                        () => {
-                            if (counter > 0) {
-                                setCounter(counter - 1)
-                            }
-                        }} >-
-                    </button>
+
+                    <button onClick={ decrement } >-</button>
 
                     <input type="text" name="counter" value={counter} readOnly id="Counter" ></input>
 
-                    <button onClick={
-                        () => {
-                            if (counter <= stockQuantity) {
-                                setCounter(counter + 1)
-                            }
-                        }} >+
-                    </button>
+                    <button onClick={ increment } >+</button>
 
                 </div>
                 <button onClick={agregarAlCarrito}>Add to cart</button>

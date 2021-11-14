@@ -12,7 +12,7 @@ export const CartListContainer = () => {
             {
                 (cart[0] !== undefined) ?
                     cart.map((producto) => (
-                        <CartItem item={producto} key={producto.id}/>
+                        <CartItem key={producto.id} item={producto} />
                     ))
                     :
                     (<h2>Carrito vacio</h2>)
