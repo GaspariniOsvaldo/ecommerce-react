@@ -29,7 +29,7 @@ export const ItemDetailContainer = () => {
             {itemDetail ? (<section className="ItemDetailContainer">
                             <ItemDetail item={itemDetail} />
                         </section>)
-                        : <h1>Loading ...</h1>}
+                        : (<h1>Loading ...</h1>)}
         </>
     )
 }

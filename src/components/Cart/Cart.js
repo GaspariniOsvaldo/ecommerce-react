@@ -5,10 +5,6 @@ import { CartListContainer } from "./CartListContainer";
 
 export const Cart = () => {
 
-    const { cart } = useCart();
-
-    console.log("El cart tiene: " + cart);
-
     return (
         <section className="CartSection">
             <section className="CartListSection">

@@ -12,7 +12,12 @@ export const CartProvider =  ({children}) => {
 
     const existsInCart = (item) => {
         const result = cart.findIndex(producto => producto.id === item.id)
-        console.log(result);
+        
+        cart && cart.map((producto) => (
+            console.log("El cart tiene: " + producto.id + " y el item buscado es: " + item.id)
+        ))
+
+        console.log("El findIndex al buscarlo da: " + result);
         return (result);
     }
 
@@ -35,6 +40,9 @@ export const CartProvider =  ({children}) => {
 
         if (indexItem >= 0) {
             const cartProv = cart.filter(x => x.id !== item.id);
+
+            console.log("El cart prov da: " + cartProv)
+
             setCart(cartProv);
         }
     }

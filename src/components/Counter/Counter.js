@@ -8,15 +8,6 @@ export const Counter = ({ onAdd, stockQuantity }) => {
     const agregarAlCarrito = () => {
         if (counter > 0) {
             onAdd(counter);
-
-            const container = document.getElementById('addToCartContainer')
-            container.classList.add("opacityZero")
-
-
-            container.classList.add("displayNone")
-            const linkCarrito = document.getElementById('linkToCarrito')
-            linkCarrito.classList.remove("ToCarritoBase")
-            linkCarrito.classList.add("ToCarritoAfter")
         }
     }
 
@@ -46,7 +37,6 @@ export const Counter = ({ onAdd, stockQuantity }) => {
                 </div>
                 <button onClick={agregarAlCarrito}>Add to cart</button>
             </section>
-            <Link to="/cart" id="linkToCarrito" className="ToCarritoBase" >Ir al carrito</Link>
         </section>
     )
 }

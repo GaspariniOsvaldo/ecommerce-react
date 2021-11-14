@@ -116,6 +116,13 @@
       align-items: center;
       width: 60vw;
 
+      #linkToCarrito {
+        background-color: orange;
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 1rem;
+      }
+
       .CounterContainer {
         height: 15vh;
         width: 10vw;
@@ -126,33 +133,6 @@
           flex-flow: column nowrap;
           justify-content: center;
           align-items: center;
-
-        }
-        
-        .opacityZero {
-          opacity: 0;
-          transition: all 1s ease;
-        }
-
-        .displayNone {
-          display: none;
-        }
-
-        /* ---- */
-        #linkToCarrito {
-          background-color: orange;
-          border: 1px solid black;
-          border-radius: 20px;
-          padding: 1rem;
-        }
-
-        .ToCarritoBase {
-          display: none;
-        }
-
-        .ToCarritoAfter {
-          Link {
-          }
         }
       }
 
@@ -250,17 +230,19 @@
       .CartListContainer {
         width: 70%;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 10px;
-  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         .CartItem {
+          width: 20%;
           margin: 0 auto;
+
           display: flex;
           flex-flow: column nowrap;
           justify-content: center;
           align-items: center;
-  
+
           img {
             width: 80%;
           }
