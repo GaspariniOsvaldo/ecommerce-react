@@ -14,7 +14,7 @@ export const CartItem = ({ item }) => {
 
             <img src={item.pictureUrl} alt={item.alt} />
             <h2> {item.title} </h2>
-            <h3> ${item.price} </h3>
+            <h3> Total: ${(item.price * item.quantity)} </h3>
             <h3> Amount: {item.quantity}</h3>
 
             <button onClick={remove} >Remove item</button>

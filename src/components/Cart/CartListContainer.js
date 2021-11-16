@@ -1,6 +1,16 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext"
 import { CartItem } from "./CartItem";
+
+const EmptyCart = () => {
+    return (
+        <section>
+            <h2>Carrito vacio</h2>
+            <Link to="/"> Go home </Link>
+        </section>
+    )
+}
 
 export const CartListContainer = () => {
 
@@ -15,7 +25,7 @@ export const CartListContainer = () => {
                         <CartItem key={producto.id} item={producto} />
                     ))
                     :
-                    (<h2>Carrito vacio</h2>)
+                    (<EmptyCart/>)
             }
         </section>
     )

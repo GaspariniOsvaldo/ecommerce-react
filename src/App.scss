@@ -7,12 +7,36 @@
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
+
+    height: 8rem;
     padding: 2rem 0;
     background: radial-gradient(
       circle,
       rgba(49, 49, 49, 1) 13%,
       rgba(0, 0, 0, 1) 76%
     );
+
+    .cartWidget {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      
+      .bloonCart {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: violet;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
 
     .ActiveNavLink {
       border-bottom: 1px solid white;
@@ -226,6 +250,9 @@
 
     .CartListSection {
       display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
 
       .CartListContainer {
         width: 70%;

@@ -5,13 +5,21 @@ import { CartListContainer } from "./CartListContainer";
 
 export const Cart = () => {
 
+    const { cart } = useCart();
+    const { clearCart } = useCart();
+
+    const clear = () => {
+        clearCart();
+    }
+
     return (
         <section className="CartSection">
             <section className="CartListSection">
                 <CartListContainer></CartListContainer>
+                {
+                    (cart[0] !== undefined) && (<button onClick={ clear }>Clear cart</button>)
+                }
             </section>
-
-            <Link to="/" >Seguir comprando</Link>
         </section>
     )
 }

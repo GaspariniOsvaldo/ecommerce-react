@@ -1,9 +1,13 @@
 import 'boxicons';
 import { Link, NavLink} from 'react-router-dom';
+import { useCart } from '../../contexts/CartContext';
 import '../CartWidget/CartWidget';
 import { CartWidget } from '../CartWidget/CartWidget';
 
 export const NavBar = () => {
+
+    const { cart } = useCart();
+
     return (
         <header>
 
@@ -15,7 +19,9 @@ export const NavBar = () => {
                 <li><NavLink activeClassName="ActiveNavLink" to="/category/In-ear">Earphones</NavLink></li>
             </ul>
 
-            <CartWidget/>
+            {
+                cart[0] !== undefined ? (<CartWidget/>) : (<div></div>)
+            }
 
         </header>
     )
