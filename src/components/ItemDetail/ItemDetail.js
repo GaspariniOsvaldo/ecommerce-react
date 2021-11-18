@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useCart } from "../../contexts/CartContext"
 import { Counter } from "../Counter/Counter"
 import { Link } from "react-router-dom";
+import images from "../../media/images";
 
 
 export const ItemDetail = ({ item }) => {

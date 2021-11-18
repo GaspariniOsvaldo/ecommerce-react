@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Productos } from "../../media/productos";
 import { useParams } from "react-router";
 import { useEffect } from "react";
+import { collection, getDocs, getFirestore } from "@firebase/firestore";
 
 export const ItemListContainer = () => {
 
@@ -11,18 +12,21 @@ export const ItemListContainer = () => {
     const [products, setProducts] = useState(null);
 
     useEffect(() => {
-        return new Promise((resolve, reject) => {
-            setTimeout (() => {
-                resolve(Productos);
-            }, 500);
-        })
-        .then(catalogo => {
-            if(categoryId){
-                const categorySelect = Productos.filter((x) => x.cat === categoryId)
+        
+        const db = getFirestore();
+
+        getDocs(collection(db, "items"))
+
+        .then(snapshot => {
+            const dbProducts = snapshot.docs.map((doc) => doc.data());
+            dbProducts.map(x => console.log(x))
+            
+            if (categoryId) {
+                const categorySelect = dbProducts.filter(item => item.cat === categoryId);
                 setProducts(categorySelect);
             }
-            else {
-                setProducts(catalogo);
+            else{
+                setProducts(dbProducts);
             }
         })
     }, [categoryId])

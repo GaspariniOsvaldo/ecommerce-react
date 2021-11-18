@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-const app = initializeApp(firebaseConfig);
-
 const firebaseConfig = {
     apiKey: "AIzaSyBKoF5RBH5YnnZ9Vu8pge1Lak817V2BLFk",
     authDomain: "react-ecommerce-4af1f.firebaseapp.com",
@@ -12,6 +10,8 @@ const firebaseConfig = {
     appId: "1:570954344373:web:8af83fec527573d9abdbfc",
     measurementId: "G-CJ015BWLQH"
 };
+
+const app = initializeApp(firebaseConfig);
 
 export const getFirebase = () => app;
 
