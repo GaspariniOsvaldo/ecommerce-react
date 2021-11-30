@@ -5,9 +5,6 @@ import { useParams } from "react-router";
 import { getFirestore } from "../../firebase/index";
 import { doc, getDoc } from "firebase/firestore";
 
-/* import { Productos } from "../../media/productos"; */
-
-
 export const ItemDetailContainer = () => {
 
     const [itemDetail, setItemDetail] = useState(null);

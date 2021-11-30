@@ -1,14 +1,16 @@
-import images from "../../media/images";
 import { ItemCategories } from "./ItemCategories";
+import { collection, getDocs, getFirestore } from "@firebase/firestore";
+import { useEffect, useState } from "react";
 
 
 export const Categories = () => {
+
     return(
         <section className="CategoriesContainer">
             <h2 className="CategoriesContainer__title">Categories</h2>
             <section className="Categories">
-                <ItemCategories key="headphones" title="Headphones" pictureUrl={images.sony1} ></ItemCategories>
-                <ItemCategories key="in-ear" title="In-ear" pictureUrl={images.apple1} ></ItemCategories>
+                <ItemCategories key="headphones" title="Headphones" pictureUrl="https://i.imgur.com/w0U0YPh.png" ></ItemCategories>
+                <ItemCategories key="in-ear" title="In-ear" pictureUrl="https://i.imgur.com/8Sxu3B7.png" ></ItemCategories>
             </section>
         </section>
     );
