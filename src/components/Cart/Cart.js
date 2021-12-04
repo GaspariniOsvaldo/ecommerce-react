@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext"
-import { CartBuy } from "./CartBuy";
 import { CartListContainer } from "./CartListContainer";
 
 
@@ -19,7 +19,7 @@ export const Cart = () => {
                 {
                     (cart[0] !== undefined) && (<button onClick={ clear }>Clear cart</button>)
                 }
-                <CartBuy></CartBuy>
+                <Link to="/cart/finish">Finalizar compra</Link>
             </section>
         </section>
     )

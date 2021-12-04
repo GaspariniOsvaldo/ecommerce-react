@@ -1,7 +1,4 @@
 import { ItemCategories } from "./ItemCategories";
-import { collection, getDocs, getFirestore } from "@firebase/firestore";
-import { useEffect, useState } from "react";
-
 
 export const Categories = () => {
 

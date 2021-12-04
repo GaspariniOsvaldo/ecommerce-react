@@ -11,7 +11,7 @@ export const NavBar = () => {
     return (
         <header>
 
-            <h1><Link to="/">audiophile</Link></h1>
+            <h1><Link to="/">reactSounds</Link></h1>
 
             <ul>
                 <li><NavLink activeClassName="ActiveNavLink" exact to="/">Home</NavLink></li>

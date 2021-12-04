@@ -7,6 +7,7 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { Categories } from './components/Categories/Categories';
 import { CartProvider } from './contexts/CartContext';
 import { Cart } from './components/Cart/Cart';
+import { CartBuy } from './components/Cart/CartBuy';
 
 export default function App() {
 
@@ -20,7 +21,6 @@ export default function App() {
           <Switch>
 
             <Route exact path="/">
-              <Categories></Categories>
               <ItemListContainer></ItemListContainer>
             </Route>
 
@@ -35,6 +35,10 @@ export default function App() {
 
             <Route exact path="/cart">
               <Cart/>
+            </Route>
+
+            <Route exact path="/cart/finish">
+              <CartBuy/>
             </Route>
 
           </Switch>

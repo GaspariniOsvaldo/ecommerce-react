@@ -12,7 +12,7 @@
     padding: 2rem 0;
     background: radial-gradient(
       circle,
-      rgba(49, 49, 49, 1) 13%,
+      rgba(49, 49, 49, 1) 13%,  
       rgba(0, 0, 0, 1) 76%
     );
 
@@ -71,7 +71,7 @@
     justify-content: center;
     align-items: center;
     padding: 5vh 0 0;
-    background-color: white;
+    background-color: #39A2DB;
 
     .ItemListContainer__title {
       border-bottom: 1px solid black;
@@ -89,8 +89,9 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        padding: 10px;
+        margin: 10px;
         width: 30%;
+        background-color: lighten(#E8F0F2, 5);
 
         .imgItem {
           width: 10vw;
@@ -100,7 +101,7 @@
         }
 
         section {
-          background-color: darken($color: #fff, $amount: 3);
+          background-color: #A2DBFA;
           padding: 1rem;
           width: 100%;
           display: flex;
@@ -129,9 +130,10 @@
     flex-flow: row nowrap;
     background-color: $color-white;
     margin: 0 auto;
-    padding: 0 0 5vh;
+    padding: 5vh 0;
     justify-content: center;
     align-items: center;
+    background-color: #E8F0F2 ;
 
     .ItemDetail {
       display: flex;
@@ -170,7 +172,6 @@
 
       img {
         width: 25vw;
-        background: #eeeeee;
       }
     }
   }
@@ -180,9 +181,13 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+    background-color: #E7E0C9;
+    border-bottom: 5px solid #6B7AA1;
 
     .CategoriesContainer__title {
       border-bottom: 1px solid black;
+      margin-bottom: 1rem;
     }
 
     .Categories {
@@ -212,17 +217,19 @@
   #Counter {
     font-family: "Montserrat", serif;
     height: 40px;
-    background: #4285eb;
+    background: #39A2DB;
     display: inline-flex;
     flex-flow: row nowrap;
     border-radius: 20px;
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
 
     button,
     input {
       width: 40px;
       border: 0;
       font-size: 2rem;
-      background: #4285eb;
+      background: #39A2DB;
       color: $color-white;
       text-align: center;
       outline: none;
@@ -234,17 +241,22 @@
       transition: all 0.2s ease-in-out;
 
       &:hover {
-        background: #2169d6;
+        background: darken(#39A2DB, 10);
       }
     }
-
-    #Counter {
-      font-size: 1.3rem;
-      padding: 0 0.5rem;
-    }
+  }
+  .btnAddToCart {
+    border: none;
+    margin: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    background-color: $color-blue;
+    cursor: pointer;
   }
 
   .CartSection {
+    background-color: #39A2DB;
+    min-height: 90vh;
     display: flex;
     flex-flow: column nowrap;
 
@@ -264,16 +276,51 @@
         .CartItem {
           width: 20%;
           margin: 0 auto;
-
           display: flex;
           flex-flow: column nowrap;
           justify-content: center;
           align-items: center;
+          text-align: center;
+          background-color: #E8F0F2;
+
+          .btnRemoveItem {
+            margin: 1rem;
+            border: none;
+            background-color: $color-blue-accent;
+            padding: 1rem;
+            border-radius: 1rem;
+            cursor: pointer;
+          }
 
           img {
             width: 80%;
           }
         }
+      }
+    }
+  }
+
+  .cartBuy {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin: 2rem;
+    }
+
+    .cartBuyForm {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 20%;
+      margin: 0 auto;
+
+      button {
+        margin: 1rem;
       }
     }
   }

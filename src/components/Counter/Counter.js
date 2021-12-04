@@ -34,7 +34,7 @@ export const Counter = ({ onAdd, stockQuantity }) => {
                     <button onClick={ increment } >+</button>
 
                 </div>
-                <button onClick={agregarAlCarrito}>Add to cart</button>
+                <button className="btnAddToCart" onClick={agregarAlCarrito}>Add to cart</button>
             </section>
         </section>
     )

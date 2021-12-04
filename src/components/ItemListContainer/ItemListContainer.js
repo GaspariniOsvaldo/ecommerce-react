@@ -31,7 +31,7 @@ export const ItemListContainer = () => {
 
     return (
         <section className="ItemListContainer">
-            <h2 className="ItemListContainer__title">Productos</h2>
+            <h2 className="ItemListContainer__title">Products</h2>
             <ItemList productos={products}></ItemList>
         </section>
     );
